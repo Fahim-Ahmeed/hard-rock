@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    
     <div class="container">
         <nav class="navbar  navbar-dark my-3">
             <a class="navbar-brand" href="#">
@@ -46,18 +47,18 @@
             <div class="search-bar col-md-6 mx-auto">
                 <h1 class="text-center">Lyrics Search</h1>
                 <div class="search-box my-5">
-                    <input type="text" class="form-control" placeholder="Enter your artist song name">
-                    <button class="btn btn-success search-btn">Search</button>
+                    <input type="text" class="form-control" id="search-box" onkeypress=" inputSong()" placeholder="Enter your artist song name">
+                    <button class="btn btn-success search-btn" id="search-button" onclick="findSong()">Search</button>
                 </div>
             </div>
             <!-- === Simple results === -->
             <div class="d-flex justify-content-center">
-                <div class="">
+                <div class="" id="suggest">
+                    <!-- <p class="author lead"><strong>Purple Noon</strong> Album by <span>Washed Out</span> <button class="btn btn-success">Get Lyrics</button></p>
                     <p class="author lead"><strong>Purple Noon</strong> Album by <span>Washed Out</span> <button class="btn btn-success">Get Lyrics</button></p>
                     <p class="author lead"><strong>Purple Noon</strong> Album by <span>Washed Out</span> <button class="btn btn-success">Get Lyrics</button></p>
                     <p class="author lead"><strong>Purple Noon</strong> Album by <span>Washed Out</span> <button class="btn btn-success">Get Lyrics</button></p>
-                    <p class="author lead"><strong>Purple Noon</strong> Album by <span>Washed Out</span> <button class="btn btn-success">Get Lyrics</button></p>
-                    <p class="author lead"><strong>Purple Noon</strong> Album by <span>Washed Out</span> <button class="btn btn-success">Get Lyrics</button></p>
+                    <p class="author lead"><strong>Purple Noon</strong> Album by <span>Washed Out</span> <button class="btn btn-success">Get Lyrics</button></p> -->
                 </div>
             </div>
             <!-- Single Lyrics -->
@@ -221,6 +222,8 @@
 
     <!-- Custom Script Here -->
 
+   <script src="script.js"></script>
+  
 </body>
 
 </html>
