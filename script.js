@@ -1,4 +1,4 @@
-let div;
+
 //input box
 let inputSong=()=>{
     document.getElementById('suggest-area').innerText='';
@@ -15,8 +15,8 @@ function findSong(){
     .then(data=>{
 
         for(let i=0;i<10;i++){
-            let songTitle=data.data[i].title;
-            let songArtist=data.data[i].artist.name;
+            const songTitle=data.data[i].title;
+            const songArtist=data.data[i].artist.name;
             const songList=document.createElement('div');
       
         songList.innerHTML+=` <div class="single-result row align-items-center my-3 p-3 id="song-div">
@@ -28,16 +28,17 @@ function findSong(){
         <button class="btn btn-success" onclick="findLyrics('${songArtist}','${songTitle}')">Get Lyrics</button>
         </div>
         </div>`;
-        
-           div=document.getElementById('suggest-area');
+        console.log(songArtist,songTitle);
+        const div=document.getElementById('suggest-area');
            div.appendChild(songList);         
         }
         
     })
 }
 
-
+//to get lyrics
 function findLyrics(artist,title){
+    console.log(artist,title);
     fetch(`https://api.lyrics.ovh/v1/${artist}/${title}`)
     .then(res=>res.json())
     .then(data=>{
@@ -55,23 +56,3 @@ function findLyrics(artist,title){
 }
 
 
-
-
-
-
-  //    const songWithTitle=`${captureSong} album by ${songBy}`;
-        //    songList.innerText=songWithTitle;
-
-// const songLyrics=document.createElement('div');
-        // songLyrics.innerHTML=`<div class="single-result row align-items-center my-3 p-3>fjfksjfdskjfasdkfjasdkjfsdafjdslfjds;fafjkaa;f;ldffjda;l</div>`;
-        // const lyricsArea=document.getElementById("song-div");
-        // lyricsArea.appendChild(songLyrics);
-            // let captureSong=data.data[i].title;
-            // let songBy=data.data[i].artist.name;
-
-
-// div.appendChild(suggestList);
-// const div=document.getElementById('suggest-area');
-// let suggestList=document.getElementById('suggest-item');
-// const songTitle=document.getElementById('song-title').innerText=captureSong;
-// const songName=document.getElementById('song-name').innerText=songBy; 
